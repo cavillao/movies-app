@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ movie.title }}</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss()"
+  ></button>
+</div>
+<div class="modal-body">
+  <img
+    [src]="movie.poster"
+    class="img-fluid mb-3 detail-image"
+    alt="Movie Poster"
+  />
+  <p><strong>Plot:</strong> {{ movie.fullplot }}</p>
+  <p><strong>Genres:</strong> {{ movie.genres.join(", ") }}</p>
+  <p><strong>Cast:</strong> {{ movie.cast.join(", ") }}</p>
+  <p><strong>Director(s):</strong> {{ movie.directors.join(", ") }}</p>
+  <p><strong>Release Date:</strong> {{ movie.released | date }}</p>
+  <p><strong>Rating:</strong> {{ movie.imdb.rating }}</p>
+</div>
