@@ -19,4 +19,13 @@
   <p><strong>Director(s):</strong> {{ movie.directors.join(", ") }}</p>
   <p><strong>Release Date:</strong> {{ movie.released | date }}</p>
   <p><strong>Rating:</strong> {{ movie.imdb.rating }}</p>
+
+  <div *ngIf="movie.num_mflix_comments && movie.num_mflix_comments > 0">
+    <h6>Comments: {{ movie.num_mflix_comments }}</h6>
+  </div>
+  <div
+    *ngIf="!movie.num_mflix_comments || movie.num_mflix_comments.length === 0"
+  >
+    <p>No comments available.</p>
+  </div>
 </div>
